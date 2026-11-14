@@ -1,0 +1,10 @@
+{
+  "name": "Campus-Cruise",
+  "short_name": "Cruise",
+  "description": "Verified, students-only bike ride-sharing for UIU",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff7f1",
+  "theme_color": "#f26a1b",
+  "icons": [{ "src": "/logo.png", "sizes": "456x456", "type": "image/png", "purpose": "any" }]
+}
