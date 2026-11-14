@@ -7,7 +7,7 @@
 **A verified, students-only ride-sharing platform for United International University (UIU).**
 Students with bikes offer rides, fellow students book them, and everyone stays inside a trusted campus community.
 
-> Course project for **System Analysis & Design Laboratory (CSE 3411)**, UIU, with a full SRS, system models, and a Figma UI prototype (mobile + web).
+> Started as the **System Analysis & Design Lab (CSE 3411)** project at UIU (full SRS, system models, Figma prototype) and now also a working full-stack app.
 
 ## Why Campus-Cruise?
 
@@ -33,9 +33,58 @@ Commuting to campus is expensive, slow and sometimes unsafe. Commercial apps suc
 | Web portal | Rider, Driver |
 | Admin web panel | Administrators |
 
-## Planned tech stack (from the SRS)
+## The working app
 
-Flutter / React Native (mobile) · HTML5, CSS3, JavaScript (web) · Node.js + Express REST APIs · MySQL / PostgreSQL (Firebase optional) · Google Maps · bKash / Nagad gateways · push and email notifications. Process model: **Agile**.
+The prototype is now a real full-stack app: a mobile-first web app (installable as a PWA) backed by a REST API and a SQLite database, with **zero npm dependencies** (Node 22+ only).
+
+<p>
+  <img src="docs/screenshots/login.png" width="180" alt="Login">
+  <img src="docs/screenshots/find-rides.png" width="180" alt="Find rides">
+  <img src="docs/screenshots/ride-details.png" width="180" alt="Ride details">
+  <img src="docs/screenshots/admin.png" width="180" alt="Admin dashboard">
+</p>
+
+### Run it
+
+```bash
+node -v                # needs 22.5 or newer
+npm run seed           # optional demo data (students, a driver, rides)
+ADMIN_PASSWORD=choose-one npm start
+# open http://localhost:3000
+```
+
+Demo logins after `npm run seed` (password `password123`): `arif@bscse.uiu.ac.bd` (rider), `rahat@bscse.uiu.ac.bd` (driver). Admin: `admin@uiu.ac.bd` with the `ADMIN_PASSWORD` you set (a random one is printed on first start if you don't).
+
+| Variable | Purpose | Default |
+|---|---|---|
+| `PORT` | HTTP port | `3000` |
+| `DATA_DIR` | database and session secret | `./data` |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` | first admin account | `admin@uiu.ac.bd` / random |
+| `ALLOWED_EMAIL_DOMAIN` | who may register | `uiu.ac.bd` |
+| `SESSION_SECRET` | cookie signing key | generated into `DATA_DIR` |
+
+`npm test` runs 11 API tests (auth, permissions, seat limits, negotiation, payments, ratings, matching, admin).
+
+### What is implemented vs. the SRS
+
+| SRS feature | Status |
+|---|---|
+| UIU-email registration, login, roles, admin approval | ✅ UIU domain check + student ID + admin verification |
+| Driver and bike verification | ✅ bike/licence details reviewed by admin |
+| Ride posting, search and filters | ✅ pickup, destination, date, max fare |
+| Smart matching from class routine | ✅ saved weekly routine matched on place, weekday and time |
+| Booking request, driver approval, seat management | ✅ seats can't be oversold |
+| In-app chat and fare negotiation | ✅ offers the other side accepts (polling every 4 s) |
+| Payments (bKash, Nagad, cash) | 🟡 **demo mode**: records a fake transaction, cash is confirmed by the driver. Real gateways need merchant credentials |
+| Live GPS tracking | 🟡 browser geolocation, shared by the driver, link opens OpenStreetMap |
+| Emergency SOS | 🟡 alert with location appears in the admin dashboard; no SMS or push yet |
+| Ratings and reviews | ✅ both directions, after a finished ride |
+| Complaints and admin dashboard | ✅ verification queues, reports, SOS, ban/suspend |
+| Student ID **photo** upload, email OTP, push notifications | ❌ not built yet |
+
+### Architecture
+
+`public/` is a vanilla-JS single-page app (hash routing, strict CSP, no inline scripts). `server/` is a plain Node HTTP server: `app.js` (routes and rules), `db.js` (SQLite schema via `node:sqlite`), `auth.js` (scrypt password hashing, HMAC-signed session cookies, rate limiting). Notable safeguards: parameterised SQL everywhere, transactions for seat allocation, HttpOnly/SameSite cookies, login and sign-up rate limits, banned users cut off immediately.
 
 ## Documentation
 
