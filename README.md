@@ -53,11 +53,74 @@ The SRS covers requirements elicitation (survey of UIU students, Uber/Pathao ben
 |---|---|
 | ![Class](docs/diagrams/class.png) | ![Sequence](docs/diagrams/sequence.png) |
 
-## Figma prototype
+## UI prototype
 
-🎨 **Prototype link:** _add the Figma share link here_
+Screens from the Figma prototype (section 8 of the SRS).
 
-Screens are documented in section 8 of the SRS (mobile rider/driver, web rider/driver/admin).
+### Mobile app (rider and driver)
+
+<p>
+  <img src="docs/prototype/mobile/01-login.png" width="150" alt="Login" title="Login">
+  <img src="docs/prototype/mobile/02-splash.png" width="150" alt="Splash" title="Splash">
+  <img src="docs/prototype/mobile/03-choose-role.png" width="150" alt="Choose role" title="Choose role">
+  <img src="docs/prototype/mobile/04-find-a-ride.png" width="150" alt="Find a ride" title="Find a ride">
+  <img src="docs/prototype/mobile/05-ride-details.png" width="150" alt="Ride details" title="Ride details">
+  <img src="docs/prototype/mobile/06-chat-fare-bargain.png" width="150" alt="Chat fare bargain" title="Chat fare bargain">
+  <img src="docs/prototype/mobile/07-trip-summary-payment.png" width="150" alt="Trip summary payment" title="Trip summary payment">
+  <img src="docs/prototype/mobile/08-ride-confirmed.png" width="150" alt="Ride confirmed" title="Ride confirmed">
+  <img src="docs/prototype/mobile/09-live-tracking.png" width="150" alt="Live tracking" title="Live tracking">
+  <img src="docs/prototype/mobile/10-rate-trip.png" width="150" alt="Rate trip" title="Rate trip">
+  <img src="docs/prototype/mobile/11-driver-home.png" width="150" alt="Driver home" title="Driver home">
+  <img src="docs/prototype/mobile/12-driver-post-ride.png" width="150" alt="Driver post ride" title="Driver post ride">
+</p>
+
+### Web portals (rider, driver, admin)
+
+**Login**
+
+![Login](docs/prototype/web/01-login.png)
+
+**Select role**
+
+![Select role](docs/prototype/web/02-select-role.png)
+
+**Rider dashboard**
+
+![Rider dashboard](docs/prototype/web/03-rider-dashboard.png)
+
+**Splash**
+
+![Splash](docs/prototype/web/04-splash.png)
+
+**Rider ride details and booking**
+
+![Rider ride details and booking](docs/prototype/web/05-rider-ride-details-and-booking.png)
+
+**Rider payment**
+
+![Rider payment](docs/prototype/web/06-rider-payment.png)
+
+**Rider rating and settings**
+
+![Rider rating and settings](docs/prototype/web/07-rider-rating-and-settings.png)
+
+**Driver dashboard and rides**
+
+![Driver dashboard and rides](docs/prototype/web/08-driver-dashboard-and-rides.png)
+
+**Driver messages and settings**
+
+![Driver messages and settings](docs/prototype/web/09-driver-messages-and-settings.png)
+
+**Admin dashboard and users**
+
+![Admin dashboard and users](docs/prototype/web/10-admin-dashboard-and-users.png)
+
+**Admin verification and reports**
+
+![Admin verification and reports](docs/prototype/web/11-admin-verification-and-reports.png)
+
+🎨 **Figma link:** _add the Figma share link here_
 
 ## Team
 
