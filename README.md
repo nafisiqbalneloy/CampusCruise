@@ -1,13 +1,17 @@
-# 🚗 Campus-Cruise
+<p align="center">
+  <img src="docs/logo.png" width="140" alt="Campus-Cruise logo">
+</p>
+
+# 🏍️ Campus-Cruise
 
 **A verified, students-only ride-sharing platform for United International University (UIU).**
-Student drivers post rides, student riders book them, and everyone stays inside a trusted campus community.
+Students with bikes offer rides, fellow students book them, and everyone stays inside a trusted campus community.
 
 > Course project for **System Analysis & Design Laboratory (CSE 3411)**, UIU, with a full SRS, system models, and a Figma UI prototype (mobile + web).
 
 ## Why Campus-Cruise?
 
-Commuting to campus is expensive, slow and sometimes unsafe. Commercial apps such as Uber and Pathao don't offer the trust of travelling with verified classmates. Campus-Cruise connects UIU students who own vehicles with students heading the same way, at fair prices.
+Commuting to campus is expensive, slow and sometimes unsafe. Commercial apps such as Uber and Pathao don't offer the trust of travelling with verified classmates. Campus-Cruise connects UIU students who own bikes with students heading the same way, at fair prices.
 
 ## Key features
 
